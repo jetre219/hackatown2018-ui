@@ -1,4 +1,4 @@
-var app = angular.module("readingcircle-app", [
+var app = angular.module("hackatown", [
     "ngRoute",
     "ngCookies",
     "ui.materialize"

@@ -1,4 +1,4 @@
-var app = angular.module("readingcircle-app");
+var app = angular.module("hackatown");
 
 app.factory("$api", [
     "$http",
@@ -27,14 +27,6 @@ app.factory("$api", [
                 return $http({
                     url: apiUrl + '/actors/' + id,
                     method: 'GET'
-                });
-            },
-            follow: function follow(id) {
-                return $http({
-                    url: apiUrl + '/follow',
-                    method: 'POST',
-                    data: {id},
-                    ContentType: 'application/json'
                 });
             },
             getActorByName: function getActorByName(name) {

@@ -117,7 +117,7 @@ var bookWeek = {
     }
 }
 
-var app = angular.module("readingcircle-app");
+var app = angular.module("hackatown");
 app.controller("HomeCtrl", [
     '$rootScope',
     '$scope',

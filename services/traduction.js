@@ -1,4 +1,4 @@
-var app = angular.module("readingcircle-app");
+var app = angular.module("hackatown");
 app.run([
     "$rootScope",
     "$cookies",
