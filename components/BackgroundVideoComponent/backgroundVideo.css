@@ -1,0 +1,11 @@
+#backgroundVideoContainer{
+    position: fixed;
+    z-index: 0;
+    min-width: 100%;
+    min-height: 100%;
+    left: 0px; top: 0px;
+    overflow: hidden;
+    opacity: 1;
+    backface-visibility: hidden;
+    transition-property: opacity;
+}
