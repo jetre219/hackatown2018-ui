@@ -1,0 +1,22 @@
+
+<nav class="grey darken-4" role="navigation">
+    <div class="nav-wrapper container" ng-controller="NavbarCtrl">
+        <a id="logo-container" href="#" class="brand-logo"><i style="font-size: 4rem;" class="material-icons">book</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li>
+                {{ username }}
+            </li>
+            <li>
+                <form id="search-navbar">
+                    <input style="height: 30px" type="search" placeholder="Search">
+                </form>
+            </li>
+            <li><a id="flag" ng-click="changeLanguage()"><img style="content:url('/images/icon-{{ lang }}-flag.png')"></a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav" style="left: 0px;">
+            <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>

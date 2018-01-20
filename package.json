@@ -1,0 +1,22 @@
+{
+  "name": "readingcircle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "serve": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-cookies": "^1.6.1",
+    "angular-materialize": "^0.2.2",
+    "angular-route": "^1.6.1",
+    "blueimp-md5": "^2.7.0",
+    "express": "^4.14.0",
+    "jquery-smooth-scroll": "^2.1.2",
+    "materialize-css": "^0.98.1"
+  }
+}
