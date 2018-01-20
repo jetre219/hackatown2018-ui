@@ -1,6 +1,6 @@
 'use strict';
 
-activityList.directive('backgroundVideo', ['backgroundVideoConfig', BackgroundVideoComponent]);
+backgroundVideo.directive('backgroundVideo', ['backgroundVideoConfig', BackgroundVideoComponent]);
 
 function BackgroundVideoComponent(backgroundVideoConfig) {
     return {
