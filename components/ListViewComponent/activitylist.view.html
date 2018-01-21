@@ -17,7 +17,7 @@
             <td ng-if="data.promotion.haspromotion">
                 <div class="tooltip-custom"><i class="material-icons" style="color:gold;">&#xE83A;</i>
                     <span class="tooltiptext-custom">{{ data.promotion.description }}
-                        <div id="placeHolder"></div>
+                        <div ng-bind-html="imgElement"></div>
                     </span>
                 </div>
             </td>
@@ -28,12 +28,5 @@
     </tbody>
 </table>
 
-<script>
-    var typeNumber = 4;
-    var errorCorrectionLevel = 'L';
-    var qr = qrcode(typeNumber, errorCorrectionLevel);
-    qr.addData('Hi!');
-    qr.make();
-    document.getElementById('placeHolder').innerHTML = qr.createImgTag();
-</script>
+
 
