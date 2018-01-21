@@ -21,9 +21,11 @@
     <link rel="stylesheet" href="css/menu_sideslide.css">
     <link rel="stylesheet" href="css/main.css">    
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://developers.google.com/maps/documentation/javascript/demos/demos.css">
+    <link rel="stylesheet" href="css/map-icons.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <link rel="stylesheet" href="components/ListViewComponent/activitylist.css">
+
 
   </head>
   <body ng-app="hackatown">
@@ -62,13 +64,18 @@
       </div>  -->     
   	<!-- Header Section Start -->
 
-    <header id="video-area" data-stellar-background-ratio="0.5">    
+    <header id="video-area" data-stellar-background-ratio="0.5">
       <div id="block" data-vide-bg="video/video"></div>
       <div class="fixed-top">
           <div class="container">
             <div class="logo-menu">
+<<<<<<< HEAD
               <a href="index.html" class="logo"><img src="./img/hackatown2018.png" style="height:60px;width: 60px;"></img>HiSquad!</a>
               <!-- button class="menu-button" id="open-button"><i class="lnr lnr-menu"></i></button>  -->   
+=======
+              <a href="index.html" class="logo"><span class="lnr lnr-diamond"></span> Hi Squad</a>
+              <button class="menu-button" id="open-button"><i class="lnr lnr-menu"></i></button>    
+>>>>>>> 0bfe8f24b185f8c13f8735b557815c959c454137
             </div>           
           </div>
       </div>
@@ -77,9 +84,12 @@
         <div class="row justify-content-md-center">
           <div class="col-md-10">
             <div class="contents text-center">
+<<<<<<< HEAD
               <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Meet</h1>
               <!-- <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">Responsive Video Background Website Template Based on Bootstrap 4 to Create Complete Business Website in Minutes</p> -->
               <!-- <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms"><i class="lnr lnr-download"></i> Download</a> -->
+=======
+>>>>>>> 0bfe8f24b185f8c13f8735b557815c959c454137
             </div>
           </div>
         </div> 
@@ -105,83 +115,19 @@
     <!-- Features Section Start -->
     <section id="features" class="section" data-stellar-background-ratio="0.2">
       <div class="container">
-        <div class="section-header">          
-          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Amazing <span>Features</span></h2>
+        <div class="section-header">
+          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">View <span>Venues</span></h2>
           <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy <br> nibh euismod tincidunt ut laoreet dolore magna.</p>
+          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Bouncing marker means that there's a promotion available near you for you and your group.</p>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div class="content-left text-right wow fadeInLeft animated" data-wow-offset="10">
-              <div class="box-item left">
-                <span class="icon">
-                  <i class="lnr lnr-rocket"></i>
-                </span>
-                <div class="text">
-                  <h4>Bootstrap 4 Based</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-              </div>
-              <div class="box-item left">
-                <span class="icon">
-                  <i class="lnr lnr-laptop-phone"></i>
-                </span>
-                <div class="text">
-                  <h4>Fully Responsive</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-              </div>
-              <div class="box-item left">
-                <span class="icon">
-                  <i class="lnr lnr-cog"></i>
-                </span>
-                <div class="text">
-                  <h4>HTML5 & CSS3</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div class="show-box wow fadeInDown animated" data-wow-offset="10">
-              <img src="img/features/feature.jpg" alt="">
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div class="content-right text-left wow fadeInRight animated" data-wow-offset="10">
-              <div class="box-item right">
-                <span class="icon">
-                  <i class="lnr lnr-camera-video"></i>
-                </span>
-                <div class="text">
-                  <h4>Video Background</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                </div>
-              </div>
-              <div class="box-item right">
-                <span class="icon">
-                  <i class="lnr lnr-magic-wand"></i>
-                </span>
-                <div class="text">
-                  <h4>Parallax Sections</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-              </div>
-              <div class="box-item right">
-                <span class="icon">
-                  <i class="lnr lnr-spell-check"></i>
-                </span>
-                <div class="text">
-                  <h4>Ajax Contact Form</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-              </div>
-            </div>
+          <div class="col-12">
+            <map></map>
           </div>
         </div>
       </div>
     </section>
-    <!-- Features Section End -->    
+    <!-- Features Section End -->
 
     <!-- Start Video promo Section -->
     <section class="video-promo section" data-stellar-background-ratio="0.5">
@@ -474,7 +420,6 @@
       </div>
     </div>
     <!-- testimonial Section Start -->
-
     <!-- Download Section Start -->
     <section id="download" class="section">
       <div class="container">
@@ -693,6 +638,7 @@
     <!-- MODULES -->
     <script type="text/javascript" src="./components/ListViewComponent/activitylist.module.js"></script>
     <script type="text/javascript" src="./components/GridViewComponent/activitygrid.module.js"></script>
+    <script type="text/javascript" src="./components/GoogleMapComponent/map.module.js"></script>
     <script type="text/javascript" src="./components/BackgroundVideoComponent/backgroundVideo.module.js"></script>
     <script type="text/javascript" src="./components/CouponRedeemComponent/couponredeem.module.js"></script>
     <script type="text/javascript" src="./components/FacebookButtonComponent/facebookButton.module.js"></script>
@@ -703,6 +649,7 @@
 
     <script type="text/javascript" src="./components/ListViewComponent/activitylist.controller.js"></script>
     <script type="text/javascript" src="./components/GridViewComponent/activitygrid.controller.js"></script>
+    <script type="text/javascript" src="./components/GoogleMapComponent/map.controller.js"></script>
     <script type="text/javascript" src="./components/BackgroundVideoComponent/backgroundVideo.controller.js"></script>
     <script type="text/javascript" src="./components/CouponRedeemComponent/couponredeem.controller.js"></script>
     <script type="text/javascript" src="./components/FacebookButtonComponent/facebookButton.controller.js"></script>
@@ -712,6 +659,7 @@
     <!-- COMPONENTS -->
     <script type="text/javascript" src="./components/ListViewComponent/activitylist.component.js"></script>
     <script type="text/javascript" src="./components/GridViewComponent/activitygrid.component.js"></script>
+    <script type="text/javascript" src="./components/GoogleMapComponent/map.component.js"></script>
     <script type="text/javascript" src="./components/BackgroundVideoComponent/backgroundVideo.component.js"></script>
     <script type="text/javascript" src="./components/CouponRedeemComponent/couponredeem.component.js"></script>
     <script type="text/javascript" src="./components/FacebookButtonComponent/facebookButton.component.js"></script>
@@ -736,6 +684,8 @@
     <script type="text/javascript" src="./js/form-validator.min.js"></script>
     <script type="text/javascript" src="./js/contact-form-script.js"></script>     
     <script type="text/javascript" src="./js/main.js"></script>
-    
+    <script src="./js/map-icons.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-ruGMWt2QHUNlkawd7ZngZ0wtDzKNIEw&callback=initMap"
+              async defer></script>
   </body>
 </html>
