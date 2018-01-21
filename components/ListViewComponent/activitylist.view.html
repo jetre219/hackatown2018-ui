@@ -5,19 +5,19 @@
         <th>Address</th>
         <th></th>
     </tr>
-    <tr ng-repeat="data in sampledata">
+    <tr ng-repeat="data in venues">
         <td>{{ data.name }}</td>
         <td>{{ data.categories[0].name }}</td>
         <td>{{ data.location.address }}</td>
         <td ng-if="data.promotion.haspromotion">
-            <div class="tooltip"><i class="material-icons medium star-icon">star_border</i>
-                <span class="tooltiptext">{{ data.promotion.description }}
+            <div class="tooltip-custom"><i class="material-icons" style="color:gold;">&#xE83A;</i>
+                <span class="tooltiptext-custom">{{ data.promotion.description }}
                     <div id="placeHolder"></div>
                 </span>
             </div>
         </td>
         <td ng-if="!data.promotion.haspromotion">
-            <i class="material-icons medium">clear</i>
+            <i class="material-icons">&#xE14C;</i>
         </td>
     </tr>
 </table>
@@ -30,3 +30,4 @@
     qr.make();
     document.getElementById('placeHolder').innerHTML = qr.createImgTag();
 </script>
+

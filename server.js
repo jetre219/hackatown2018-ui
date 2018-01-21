@@ -2,8 +2,10 @@ const express = require("express");
 const port = 5000;
 
 var app = express();
+var groups = [];
 
 app.use(express.static(__dirname));
+
 
 app.use(function(req, res) {
   res.sendFile('index.html', {root: __dirname});
