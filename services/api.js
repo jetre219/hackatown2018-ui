@@ -4,7 +4,7 @@ app.factory("$api", [
     "$http",
     "$rootScope",
     function ($http, $rootScope) {
-        var apiUrl = "https://umovie.herokuapp.com";
+        var FOURSQUARE_URL = "https://api.foursquare.com/v2/venues/search?ll=45.504908799999995,-73.615113&intent=checkin&radius=5000&categoryId=4d4b7105d754a06376d81259&limit=50&client_id=Y5U4EZY1EVID34S4SJ2M44D3ULFZCXP4DCVSZVIJWKTWHEYV&client_secret=225XHPOKEIIZVMVUUKHU0ELPG2WBUENOEZWTXRWT0FKGEZB0&v=20180101"
 
         function htmlEscape(str) {
             return str
@@ -16,151 +16,9 @@ app.factory("$api", [
         }
 
         return {
-            auth: function auth() {
+            venues: function venues() {
                 return $http({
-                    url: apiUrl + '/tokeninfo',
-                    method: 'GET',
-                    contentType: 'application/x-www-form-urlencoded'
-                });
-            },
-            actor: function actor(id) {
-                return $http({
-                    url: apiUrl + '/actors/' + id,
-                    method: 'GET'
-                });
-            },
-            getActorByName: function getActorByName(name) {
-                return $http({
-                    url: apiUrl + '/search/actors?q=' + htmlEscape(name)
-                });
-            },
-            actorMovies: function actorMovies(id) {
-                return $http({
-                    url: apiUrl + '/actors/' + id + '/movies',
-                    method: 'GET'
-                });
-            },
-            addMovie: function addMovie(watchlistId, movie) {
-                return $http({
-                    url: apiUrl + '/watchlists/' + watchlistId + "/movies",
-                    method: 'POST',
-                    data: movie,
-                    contentType: 'application/x-www-form-urlencoded'
-                });
-            },
-            createWatchlist: function createWatchlist(watchlistName) {
-                return $http({
-                    url: apiUrl + '/watchlists',
-                    method: 'POST',
-                    data: {
-                        "name": watchlistName,
-                        "owner": $rootScope.user.id
-                    },
-                    headers: {
-                        "Content-Type": 'application/json'
-                    }
-                });
-            },
-            getAllWatchlist: function getAllWatchlist() {
-                return $http({
-                    url: apiUrl + '/watchlists',
-                    method: 'GET',
-                });
-            },
-            getUser: function getUser(id) {
-                return $http({
-                    url: apiUrl + '/users/' + id
-                });
-            },
-            getWatchlist: function getWatchlist(id) {
-                return $http({
-                    url: apiUrl + '/watchlists/' + id,
-                    method: 'GET',
-                });
-            },
-            logout: function logout() {
-                return $http({
-                    url: apiUrl + '/logout',
-                    method: 'GET',
-                });
-            },
-            movie: function movie(id) {
-                return $http({
-                    url: apiUrl + '/movies/' + id,
-                    method: 'GET'
-                });
-            },
-            modifyWatchlist: function modifyWatchlist(watchlist) {
-                return $http({
-                    url: apiUrl + '/watchlists/' + watchlist.id,
-                    method: 'PUT',
-                    data: watchlist,
-                });
-            },
-            searchMovieWithString: function searchMovieWithString(str) {
-                return $http({
-                    url: apiUrl + '/search/movies?q=' + str,
-                    method: 'GET',
-                });
-            },
-            searchTvShowSeasonWithString: function searchMovieWithString(str) {
-                return $http({
-                    url: apiUrl + '/search/tvshows/seasons?q=' + str,
-                    method: 'GET',
-                });
-            },
-            searchActorWithString: function searchMovieWithString(str) {
-                return $http({
-                    url: apiUrl + '/search/actors?q=' + str,
-                    method: 'GET',
-                });
-            },
-            searchUserWithString: function searchMovieWithString(str) {
-                return $http({
-                    url: apiUrl + '/search/users?q=' + str,
-                    method: 'GET',
-                });
-            },
-            searchAllWithString: function searchMovieWithString(str) {
-                return $http({
-                    url: apiUrl + '/search?q=' + str,
-                    method: 'GET',
-                });
-            },
-            signup: function signup(user) {
-                return $http({
-                    url: apiUrl + '/signup',
-                    method: 'POST',
-                    data: user
-                });
-            },
-            unfollow: function unfollow(userId) {
-                return $http({
-                    url: apiUrl + '/follow/' + userId,
-                    method: 'DELETE'
-                });
-            },
-            actor: function actor(id) {
-                return $http({
-                    url: apiUrl + '/actors/' + id,
-                    method: 'GET'
-                });
-            },
-            actorMovies: function actorMovies(id) {
-                return $http({
-                    url: apiUrl + '/actors/' + id + '/movies',
-                    method: 'GET'
-                });
-            },
-            tvshow: function tvshow(id) {
-                return $http({
-                    url: apiUrl + '/tvshows/seasons/' + id,
-                    method: 'GET'
-                });
-            },
-            tvshowEpisodes: function tvshowEpisodes(id) {
-                return $http({
-                    url: apiUrl + '/tvshows/seasons/' + id + '/episodes',
+                    url: FOURSQUARE_URL,
                     method: 'GET'
                 });
             }
