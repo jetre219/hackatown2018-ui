@@ -9,10 +9,24 @@
         <td>{{ data.name }}</td>
         <td>{{ data.categories[0].name }}</td>
         <td>{{ data.location.address }}</td>
-        <td>
-            <div class="tooltip"><i class="material-icons medium">clear</i>
-                <span class="tooltiptext">Tooltip text</span>
+        <td ng-if="data.promotion.haspromotion">
+            <div class="tooltip"><i class="material-icons medium star-icon">star_border</i>
+                <span class="tooltiptext">{{ data.promotion.description }}
+                    <div id="placeHolder"></div>
+                </span>
             </div>
+        </td>
+        <td ng-if="!data.promotion.haspromotion">
+            <i class="material-icons medium">clear</i>
         </td>
     </tr>
 </table>
+
+<script>
+    var typeNumber = 4;
+    var errorCorrectionLevel = 'L';
+    var qr = qrcode(typeNumber, errorCorrectionLevel);
+    qr.addData('Hi!');
+    qr.make();
+    document.getElementById('placeHolder').innerHTML = qr.createImgTag();
+</script>
