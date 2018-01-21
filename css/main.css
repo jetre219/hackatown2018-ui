@@ -100,9 +100,7 @@ a:focus {
   text-decoration: none;
   outline: none;
 }
-a:not([href]):not([tabindex]) {
-  color: #fff;
-}
+
 a:not([href]):not([tabindex]):focus,
 a:not([href]):not([tabindex]):hover {
   color: #4676fa;
@@ -181,6 +179,9 @@ a:not([href]):not([tabindex]):hover {
   color: #4676fa;
   border: none;
 }
+.menu-bg #selectedSquad{
+  color: #4676fa;
+}
 .menu-button:hover {
   cursor: pointer;
   opacity: #eee;
@@ -230,8 +231,17 @@ a:not([href]):not([tabindex]):hover {
   display: inline-block;
 }
 
+#selectedSquad{
+  color:white;
+  line-height: 55px;
+  float: right;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
 .dropdown{
   float: right;
+  margin-top: 16px;
 }
 .btn-secondary{
   background-color: transparent;
@@ -239,10 +249,8 @@ a:not([href]):not([tabindex]):hover {
   border: none;
 }
 
-.btn-secondary-blue{
-  background-color: white;
-  color: #4676fa;
-  border: none;
+.dropdown-item{
+  color:black;
 }
 /* ==========================================================================
    Hero Area Style
@@ -870,9 +878,7 @@ a:not([href]):not([tabindex]):hover {
 #download .section-title {
   color: #fff;
 }
-.btn {
-  margin: 10px;
-}
+
 .btn i {
   margin-right: 5px;
 }
