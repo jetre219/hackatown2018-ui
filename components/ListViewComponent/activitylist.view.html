@@ -1,25 +1,31 @@
-<table>
-    <tr>
-        <th>Activity</th>
-        <th>Description</th>
-        <th>Address</th>
-        <th></th>
-    </tr>
-    <tr ng-repeat="data in venues">
-        <td>{{ data.name }}</td>
-        <td>{{ data.categories[0].name }}</td>
-        <td>{{ data.location.address }}</td>
-        <td ng-if="data.promotion.haspromotion">
-            <div class="tooltip-custom"><i class="material-icons" style="color:gold;">&#xE83A;</i>
-                <span class="tooltiptext-custom">{{ data.promotion.description }}
-                    <div id="placeHolder"></div>
-                </span>
-            </div>
-        </td>
-        <td ng-if="!data.promotion.haspromotion">
-            <i class="material-icons">&#xE14C;</i>
-        </td>
-    </tr>
+<table class="table table-striped table-bordered table-hover text-center">
+    <thead class="text-center">
+        <tr>
+            <strong>
+                <th scope="col">Activity</th>
+                <th scope="col">Description</th>
+                <th scope="col">Address</th>
+                <th scope="col">Deal</th>
+            </strong>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="data in venues">
+            <td>{{ data.name }}</td>
+            <td>{{ data.categories[0].name }}</td>
+            <td>{{ data.location.address }}</td>
+            <td ng-if="data.promotion.haspromotion">
+                <div class="tooltip-custom"><i class="material-icons" style="color:gold;">&#xE83A;</i>
+                    <span class="tooltiptext-custom">{{ data.promotion.description }}
+                        <div id="placeHolder"></div>
+                    </span>
+                </div>
+            </td>
+            <td ng-if="!data.promotion.haspromotion">
+                <i class="material-icons">&#xE14C;</i>
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 <script>

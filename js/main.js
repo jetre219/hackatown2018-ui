@@ -130,4 +130,8 @@
    $(window).load(function() {
     "use strict";
     $('#loader').fadeOut();
+    $('.dropdown-item').on('click', function() {
+        $('#selectedSquad').text($(this).text());
+        
+    });
    });
