@@ -6,16 +6,9 @@ activityList.controller('activityListController',
 function ActivityListController($scope, $api) {
 
     $api.venues().then(function success(response){
-        $scope.sampledata = addPromotion(response.data.response.venues);
-        console.log($scope.sampledata);
+        $scope.venues = addPromotion(response.data.response.venues);
+        console.log($scope.venues);
     });
-
-    $scope.createElementFromHTML = function(htmlString) {
-        var div = document.createElement('div');
-        div.innerHTML = htmlString.createImgTag();
-        console.log(div.firstChild);
-        return div.firstChild;
-    };
 
     function addPromotion(venues){
         venues.forEach(function (venue){
@@ -51,14 +44,5 @@ function ActivityListController($scope, $api) {
         qr.make();
         return qr;
     }
-
-    function createElementFromHTML(htmlString) {
-        var div = document.createElement('div');
-        div.innerHTML = htmlString.trim();
-
-        // Change this to div.childNodes to support multiple top-level nodes
-        return div.firstChild;
-    }
-
 
 }

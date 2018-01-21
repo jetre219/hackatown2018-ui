@@ -1,9 +1,9 @@
-.tooltip {
+.tooltip-custom {
     position: relative;
     display: inline-block;
 }
 
-.tooltip .tooltiptext {
+.tooltip-custom .tooltiptext-custom {
     visibility: hidden;
     width: auto;
     background-color: black;
@@ -18,10 +18,10 @@
     z-index: 1;
 }
 
-.tooltip:hover .tooltiptext {
+.tooltip-custom:hover .tooltiptext-custom {
     visibility: visible;
 }
 
-.star-icon{
+.fucking-etoile{
     color: gold;
 }
