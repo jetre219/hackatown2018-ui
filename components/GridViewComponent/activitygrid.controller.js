@@ -7,7 +7,32 @@ function ActivityGridController($scope, $rootScope, $api) {
 
 	$api.venues().then(function success(response){
         $rootScope.venues = addPromotion(response.data.response.venues);
-        console.log($rootScope.venues);
+        $scope.categories = [
+			{
+				"name" : "Bar",
+				"qtyPromotion" : amountOfVenuesWithPromotion()
+			},
+			{
+				"name" : "Movies",
+				"qtyPromotion":0
+			},
+			{
+				"name" : "Night Life",
+				"qtyPromotion" : 0
+			},
+			{
+				"name" : "Restaurant",
+				"qtyPromotion" : 0
+			},
+			{
+				"name" : "Outdoor Activities",
+				"qtyPromotion" : 0
+			},
+			{
+				"name" : "Sport",
+				"qtyPromotion" : 0
+			},
+		];
     });
 
     function addPromotion(venues){
@@ -19,7 +44,7 @@ function ActivityGridController($scope, $rootScope, $api) {
                 promotion.haspromotion = true;
                 promotion.necessarypeople = Math.floor((Math.random() * 5) + 2);
                 promotion.description = "10% off on 20$ purchase and more!";
-                promotion.qrcode = createQrCode();
+                //promotion.qrcode = createQrCode();
             }
             venue.promotion = promotion;
         });
@@ -37,30 +62,5 @@ function ActivityGridController($scope, $rootScope, $api) {
     }
 
 	console.log($rootScope.venues);
-	$scope.categories = [
-		{
-			"name" : "Bar",
-			"qtyPromotion" : amountOfVenuesWithPromotion()
-		},
-		{
-			"name" : "Movies",
-			"qtyPromotion":0
-		},
-		{
-			"name" : "Night Life",
-			"qtyPromotion" : 0
-		},
-		{
-			"name" : "Restaurant",
-			"qtyPromotion" : 0
-		},
-		{
-			"name" : "Outdoor Activities",
-			"qtyPromotion" : 0
-		},
-		{
-			"name" : "Sport",
-			"qtyPromotion" : 0
-		},
-	];
+	
 }
