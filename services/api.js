@@ -4,7 +4,7 @@ app.factory("$api", [
     "$http",
     "$rootScope",
     function ($http, $rootScope) {
-        var FOURSQUARE_URL = "https://api.foursquare.com/v2/venues/search?ll=45.504908799999995,-73.615113&intent=checkin&radius=5000&categoryId=4d4b7105d754a06376d81259&limit=50&client_id=Y5U4EZY1EVID34S4SJ2M44D3ULFZCXP4DCVSZVIJWKTWHEYV&client_secret=225XHPOKEIIZVMVUUKHU0ELPG2WBUENOEZWTXRWT0FKGEZB0&v=20180101"
+        var FOURSQUARE_URL = "https://api.foursquare.com/v2/venues/search?ll=45.504908799999995,-73.615113&intent=checkin&radius=5000&categoryId=4d4b7105d754a06376d81259&limit=50&client_id=GF3KFNE2GIUILKGFLUVPUZ2BZTKQ0E0X4KUNR5OV0MX3ZJ2Q&client_secret=XIHVVRAOUPZPNVDH2MWFYT0WSJYROPCUAC340KR04UM5SEXN&v=20180101"
 
         function htmlEscape(str) {
             return str
