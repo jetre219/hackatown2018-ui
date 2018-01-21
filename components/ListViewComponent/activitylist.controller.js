@@ -7,7 +7,6 @@ function ActivityListController($scope, $api) {
 
     $api.venues().then(function success(response){
         $scope.venues = addPromotion(response.data.response.venues);
-        console.log($scope.venues);
     });
 
     function addPromotion(venues){
