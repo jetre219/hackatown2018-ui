@@ -4,6 +4,7 @@ var app = angular.module("hackatown", [
     "activityList",
     "activityGrid",
     "backgroundVideo",
+    "couponRedeem",
     "ui.materialize"
 ]);
 

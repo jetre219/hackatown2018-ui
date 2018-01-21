@@ -5,10 +5,6 @@ activityGrid.controller('activityGridController',
 
 function ActivityGridController($scope, venuesProvider) {
 
-	var venues = $api.venues().then(function success(response){
-    	return response.data.response.venues;
-  	});
-
 	$scope.categories = [
 		{
 			"name" : "Pub"

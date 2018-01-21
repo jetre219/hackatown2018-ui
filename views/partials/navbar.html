@@ -4,6 +4,12 @@
         <a id="logo-container" href="#" class="brand-logo"><i style="font-size: 4rem;" class="material-icons">book</i></a>
         <ul class="right hide-on-med-and-down">
             <li>
+                <i class="material-icons" style="color:#DAA520;" ng-click="redeem()">star_border</i>
+            </li>
+            <li style="color:gold;">
+                : {{ amountOfStars }}
+            </li>
+            <li>
                 {{ username }}
             </li>
             <li>
@@ -11,7 +17,6 @@
                     <input style="height: 30px" type="search" placeholder="Search">
                 </form>
             </li>
-            <li><a id="flag" ng-click="changeLanguage()"><img style="content:url('/images/icon-{{ lang }}-flag.png')"></a></li>
         </ul>
 
         <ul id="nav-mobile" class="side-nav" style="left: 0px;">

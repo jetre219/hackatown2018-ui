@@ -7,5 +7,11 @@ app.controller('NavbarCtrl', [
     function ($scope, $rootScope, $cookies, $api) {
         var alreadyLoaded = false;
         $scope.username = "JeffTremblay";
+        $rootScope.amountOfStars = 99;
+        $rootScope.openRedeemStars = false;
+
+        $scope.redeem = function(){
+        	$rootScope.openRedeemStars = true;
+        }
     }
 ]);
