@@ -10,7 +10,7 @@
 </div> -->
 
 <div class="row">
-      <div class="col-md-4 col-sm-6" ng-repeat="category in categories">
+      <div class="col-md-4 col-sm-6" ng-repeat="category in categories" ng-click="selectCategory()">
         <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
           <div class="icon">
             <i class="material-icons" ng-if="category.qtyPromotion <= 0">&#xE14C;</i>
