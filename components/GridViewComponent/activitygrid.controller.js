@@ -53,8 +53,8 @@ function ActivityGridController($scope, $rootScope, $api) {
 
     function amountOfVenuesWithPromotion(){
     	var venuesWithPromotion = 0;
-    	for (var i = 0; i < $rootScope.venues; i++){
-    		if ($rootScope.venues.haspromotion === true){
+    	for (var i = 0; i < $rootScope.venues.length; i++){
+    		if ($rootScope.venues[i].promotion.haspromotion === true){
     			venuesWithPromotion++;
     		}
     	}
