@@ -2,6 +2,7 @@ var app = angular.module("hackatown", [
     "ngRoute",
     "ngCookies",
     "activityList",
+    "activityGrid",
     "backgroundVideo",
     "ui.materialize",
     "facebookButton"
