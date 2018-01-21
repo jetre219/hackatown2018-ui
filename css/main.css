@@ -177,6 +177,10 @@ a:not([href]):not([tabindex]):hover {
 .menu-bg .logo-menu a {
   color: #4676fa;
 }
+.menu-bg .dropdown .btn-secondary{
+  color: #4676fa;
+  border: none;
+}
 .menu-button:hover {
   cursor: pointer;
   opacity: #eee;
@@ -221,6 +225,24 @@ a:not([href]):not([tabindex]):hover {
 }
 .navbar-light .navbar-toggler i {
   color: #333!important;
+}
+.menu-item{
+  display: inline-block;
+}
+
+.dropdown{
+  float: right;
+}
+.btn-secondary{
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.btn-secondary-blue{
+  background-color: white;
+  color: #4676fa;
+  border: none;
 }
 /* ==========================================================================
    Hero Area Style
