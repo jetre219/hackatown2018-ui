@@ -1238,3 +1238,7 @@ footer {
   margin-bottom: 0;
   line-height: initial;
 }
+
+thead.text-center tr th {
+  text-align: center;
+}
