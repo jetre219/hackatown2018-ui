@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
 	<div class="col s2" ng-repeat="category in categories">
 	  <div class="card">
 	    <div class="card-image">
@@ -7,4 +7,63 @@
 	    </div>
 	  </div>
 	</div>
-</div>
+</div> -->
+
+<div class="row">
+      <div class="col-md-4 col-sm-6" ng-repeat="category in categories">
+        <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
+          <div class="icon">
+            <i class="material-icons" ng-if="category.qtyPromotion <= 0">&#xE14C;</i>
+            <i class="material-icons" style="color:gold;" ng-if="category.qtyPromotion > 0">&#xE83A;</i>
+          </div>
+          <h4>{{category.name}}</h4>
+          <p ng-if="category.qtyPromotion > 0">Hey! We found {{category.qtyPromotion}} that you could enfoy with your group of friends. Check it out!</p>
+          <p ng-if="category.qtyPromotion <= 0">Sorry, no activities we're found in your area with a deal currently. Try to get more people together or check again later.</p>
+        </div>
+      </div>
+      <!-- <div class="col-md-4 col-sm-6">
+        <div class="item-boxes wow fadeInDown" data-wow-delay="0.4s">
+          <div class="icon">
+            <i class="lnr lnr-cog"></i>
+          </div>
+          <h4>Web Development</h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="item-boxes wow fadeInDown" data-wow-delay="0.6s">
+          <div class="icon">
+            <i class="lnr lnr-chart-bars"></i>
+          </div>
+          <h4>Graphic Design</h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="item-boxes wow fadeInDown" data-wow-delay="0.8s">
+          <div class="icon">
+            <i class="lnr lnr-layers"></i>
+          </div>
+          <h4>UI/UX Design</h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="item-boxes wow fadeInDown" data-wow-delay="1s">
+          <div class="icon">
+            <i class="lnr lnr-tablet"></i>
+          </div>
+          <h4>App Development</h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="item-boxes wow fadeInDown" data-wow-delay="1.2s">
+          <div class="icon">
+            <i class="lnr lnr-briefcase"></i>
+          </div>
+          <h4>Digital Marketing</h4>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.</p>
+        </div>
+      </div> -->
+    </div>
