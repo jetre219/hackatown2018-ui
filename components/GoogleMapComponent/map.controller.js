@@ -1,13 +1,15 @@
 'use strict';
 
 map.controller('mapController',
-    ['$scope', MapController]);
+    ['$scope', '$rootScope', MapController]);
 
 var scope;
+var rootScope
 
-function MapController($scope) {
+function MapController($scope, $rootScope) {
     google.maps.InfoWindow.prototype.opened = false;
     scope = $scope;
+    rootScope = $rootScope;
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(initMap);
     } else {
@@ -33,7 +35,7 @@ function initMap(position) {
             var lng = venue['location']['lng'];
             var geo = { lat, lng };
             if(venue.promotion.haspromotion) {
-                buildBouncingMarker(venue, "yellow");
+                $rootScope.buildBouncingMarker(venue, "yellow");
             } else {
                 buildMarker(venue, "blue");
             }
@@ -48,11 +50,6 @@ function buildContentString(venue) {
     var urlText = '';
     var promotionText
     if(venue['url'] !== undefined && venue['url'] !== null) urlText = '<a href="'+venue['url']+'" target="_blank">Visit website</a>';
-    if(venue['promotion'] !== undefined && venue['promotion'] !== null && venue['promotion']['haspromotion'] === true) {
-        promotionText = '<hr/>' +
-                '<p><strong>'+venue['promotion']['description']+'</strong></p>'+
-                '<p> Group of '+venue['promotion']['necessarypeople']+' person minimum</p>';
-    }
 
     var contentString =
         '<div class="map-info">' +
@@ -60,7 +57,6 @@ function buildContentString(venue) {
             '<p>'+venue['location']['formattedAddress'][0]+'</p>' +
             '<p>'+venue['location']['formattedAddress'][1]+'</p>' +
             urlText +
-            promotionText +
         '</div>';
     return contentString;
 }
@@ -101,30 +97,3 @@ function buildMarker(venue, color) {
     });*/
 }
 
-function buildBouncingMarker(venue, color) {
-    var lat = venue['location']['lat'];
-    var lng = venue['location']['lng'];
-    var geo = { lat, lng };
-    var infowindow = new google.maps.InfoWindow({
-        content: buildContentString(venue)
-    });
-    var marker = new google.maps.Marker({
-        map: map,
-        position: geo,
-        title: venue['title'],
-        animation: google.maps.Animation.BOUNCE,
-        icon: "http://maps.google.com/mapfiles/ms/icons/"+color+".png"
-    });
-    /*marker.addListener('mouseover', function() {
-        infowindow.open(map, marker);
-    });*/
-    marker.addListener('click', function() {
-        if(infowindow.opened === true) {
-            infowindow.close(map, marker);
-            infowindow.opened = false;
-        } else {
-            infowindow.open(map, marker);
-            infowindow.opened = true;
-        }
-    });
-}

@@ -160,6 +160,7 @@ app.controller("HomeCtrl", [
                 promotion.necessarypeople = Math.floor((Math.random() * 5) + 2);
                 promotion.description = "10% off on 20$ purchase and more!";
                 promotion.qrcode = createQrCode();
+                $rootScope.buildBouncingMarker(venue, "yellow");
             }
             venue.promotion = promotion;
         });
@@ -187,13 +188,41 @@ app.controller("HomeCtrl", [
 
 	    function amountOfVenuesWithPromotion(){
     	var venuesWithPromotion = 0;
-    	for (var i = 0; i < $rootScope.venues.length; i++){
-    		if ($rootScope.venues[i].promotion.haspromotion === true){
-    			venuesWithPromotion++;
-    		}
+	    	for (var i = 0; i < $rootScope.venues.length; i++){
+	    		if ($rootScope.venues[i].promotion.haspromotion === true){
+	    			venuesWithPromotion++;
+	    		}
+	    	}
+    		return venuesWithPromotion;
     	}
-    	return venuesWithPromotion;
-    }
+
+    	$rootScope.buildBouncingMarker = function(venue, color) {
+		    var lat = venue['location']['lat'];
+		    var lng = venue['location']['lng'];
+		    var geo = { lat, lng };
+		    var infowindow = new google.maps.InfoWindow({
+		        content: buildContentString(venue)
+		    });
+		    var marker = new google.maps.Marker({
+		        map: map,
+		        position: geo,
+		        title: venue['title'],
+		        animation: google.maps.Animation.BOUNCE,
+		        icon: "http://maps.google.com/mapfiles/ms/icons/"+color+".png"
+		    });
+		    /*marker.addListener('mouseover', function() {
+		        infowindow.open(map, marker);
+		    });*/
+		    marker.addListener('click', function() {
+		        if(infowindow.opened === true) {
+		            infowindow.close(map, marker);
+		            infowindow.opened = false;
+		        } else {
+		            infowindow.open(map, marker);
+		            infowindow.opened = true;
+		        }
+		    });
+		}
 
     }
 ]);
