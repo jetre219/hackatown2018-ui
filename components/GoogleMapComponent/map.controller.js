@@ -6,6 +6,7 @@ map.controller('mapController',
 var scope;
 
 function MapController($scope) {
+    google.maps.InfoWindow.prototype.opened = false;
     scope = $scope;
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(initMap);
@@ -44,11 +45,22 @@ function initMap(position) {
 
 function buildContentString(venue) {
     console.log(venue);
+    var urlText = '';
+    var promotionText
+    if(venue['url'] !== undefined && venue['url'] !== null) urlText = '<a href="'+venue['url']+'" target="_blank">Visit website</a>';
+    if(venue['promotion'] !== undefined && venue['promotion'] !== null && venue['promotion']['haspromotion'] === true) {
+        promotionText = '<hr/>' +
+                '<p><strong>'+venue['promotion']['description']+'</strong></p>'+
+                '<p> Group of '+venue['promotion']['necessarypeople']+' person minimum</p>';
+    }
+
     var contentString =
         '<div class="map-info">' +
             '<p><strong>'+venue['name']+'</strong></p>' +
             '<p>'+venue['location']['formattedAddress'][0]+'</p>' +
             '<p>'+venue['location']['formattedAddress'][1]+'</p>' +
+            urlText +
+            promotionText +
         '</div>';
     return contentString;
 }
@@ -75,12 +87,18 @@ function buildMarker(venue, color) {
         title: venue['title'],
         icon: "http://maps.google.com/mapfiles/ms/icons/"+color+".png"
     });
-    marker.addListener('mouseover', function() {
-        infowindow.open(map, marker);
+    marker.addListener('click', function() {
+        if(infowindow.opened === true) {
+            infowindow.close(map, marker);
+            infowindow.opened = false;
+        } else {
+            infowindow.open(map, marker);
+            infowindow.opened = true;
+        }
     });
-    marker.addListener('mouseout', function() {
+    /*marker.addListener('mouseout', function() {
         infowindow.close(map, marker);
-    });
+    });*/
 }
 
 function buildBouncingMarker(venue, color) {
@@ -97,10 +115,16 @@ function buildBouncingMarker(venue, color) {
         animation: google.maps.Animation.BOUNCE,
         icon: "http://maps.google.com/mapfiles/ms/icons/"+color+".png"
     });
-    marker.addListener('mouseover', function() {
+    /*marker.addListener('mouseover', function() {
         infowindow.open(map, marker);
-    });
-    marker.addListener('mouseout', function() {
-        infowindow.close(map, marker);
+    });*/
+    marker.addListener('click', function() {
+        if(infowindow.opened === true) {
+            infowindow.close(map, marker);
+            infowindow.opened = false;
+        } else {
+            infowindow.open(map, marker);
+            infowindow.opened = true;
+        }
     });
 }
