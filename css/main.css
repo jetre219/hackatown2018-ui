@@ -1211,3 +1211,8 @@ footer {
     -webkit-transform: scale(1);
   }
 }
+
+.map-info p {
+  margin-bottom: 0;
+  line-height: initial;
+}
