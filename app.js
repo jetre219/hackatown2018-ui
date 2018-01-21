@@ -3,6 +3,7 @@ var app = angular.module("hackatown", [
     "ngCookies",
     "activityList",
     "activityGrid",
+    "backgroundVideo",
     "ui.materialize"
 ]);
 

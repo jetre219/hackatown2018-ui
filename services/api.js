@@ -61,18 +61,6 @@ app.factory("$api", [
                     }
                 });
             },
-            deleteWatchlist: function deleteWatchlist(watchlistId) {
-                return $http({
-                    url: `${apiUrl}/watchlists/${watchlistId}`,
-                    method: 'DELETE',
-                });
-            },
-            deleteMovieFromWatchlist: function deleteMovieFromWatchlist(movieId, watchlistId) {
-                return $http({
-                    url: `${apiUrl}/watchlists/${watchlistId}/movies/${movieId}`,
-                    method: 'DELETE'
-                });
-            },
             getAllWatchlist: function getAllWatchlist() {
                 return $http({
                     url: apiUrl + '/watchlists',
@@ -137,17 +125,6 @@ app.factory("$api", [
                 return $http({
                     url: apiUrl + '/search?q=' + str,
                     method: 'GET',
-                });
-            },
-            signin: function signin(email, password) {
-                return $http({
-                    url: apiUrl + '/login',
-                    method: 'POST',
-                    data: {
-                        email,
-                        password
-                    },
-                    "Content-Type": 'application/x-www-form-urlencoded'
                 });
             },
             signup: function signup(user) {
