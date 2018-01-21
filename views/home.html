@@ -1,33 +1,35 @@
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=145756906087004';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '145756906087004',
+            cookie     : true,
+            xfbml      : true,
+            version    : '{latest-api-version}'
+        });
+
+        FB.AppEvents.logPageView();
+
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<facebook-button></facebook-button>
 <background-video></background-video>
 
-<div class="section grey lighten-3">
-    <div class="row container">
-        <h2 class="header center">{{ translate("MAIN_QUOTE"); }}</h2>
-        <h5 class="grey-text text-darken-3 lighten-3 center">{{ translate("WELCOMING_MESSAGE"); }}</h5>
-    </div>
-</div>
 
-<div class="parallax-container">
-    <div class="parallax">
-        <img id="home-first-image" src="../images/books-main-menu.jpeg">
-    </div>
-</div>
-
-<div class="section grey lighten-3">
-    <div class="row container">
-        <h2 class="header center">{{ translate("WEEKLY_BOOK"); }}</h2>
-        <div id="home-week-book-cover" class="center"><img src="{{bookWeek.volumeInfo.imageLinks.small}}"></div>
-        <br />
-        <div class="center">{{ translate("AUTHOR"); }} : {{bookWeek.volumeInfo.authors[0] }}</div>
-        <br />
-        <div class="center"><p>{{ bookWeek.volumeInfo.description }}</p></div>
-    </div>
-</div>
-
-<div class="parallax-container">
-    <div class="parallax">
-        <img id="home-second-image" src="../images/books-main-menu2.jpg">
-    </div>
-</div>
-
-<activity-list></activity-list>

@@ -3,7 +3,8 @@ var app = angular.module("hackatown", [
     "ngCookies",
     "activityList",
     "backgroundVideo",
-    "ui.materialize"
+    "ui.materialize",
+    "facebookButton"
 ]);
 
 app.run(["$rootScope",function($rootScope) {
