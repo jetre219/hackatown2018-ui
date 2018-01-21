@@ -5,4 +5,14 @@
         <th>Address</th>
         <th></th>
     </tr>
+    <tr ng-repeat="data in sampledata">
+        <td>{{ data.name }}</td>
+        <td>{{ data.categories[0].name }}</td>
+        <td>{{ data.location.address }}</td>
+        <td>
+            <div class="tooltip"><i class="material-icons medium">clear</i>
+                <span class="tooltiptext">Tooltip text</span>
+            </div>
+        </td>
+    </tr>
 </table>
