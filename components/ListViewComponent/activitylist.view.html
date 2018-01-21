@@ -10,14 +10,14 @@
         <td>{{ data.categories[0].name }}</td>
         <td>{{ data.location.address }}</td>
         <td ng-if="data.promotion.haspromotion">
-            <div class="tooltip-custom"><div class="fucking-etoile">*</div>
+            <div class="tooltip-custom"><i class="material-icons" style="color:gold;">&#xE83A;</i>
                 <span class="tooltiptext-custom">{{ data.promotion.description }}
                     <div id="placeHolder"></div>
                 </span>
             </div>
         </td>
         <td ng-if="!data.promotion.haspromotion">
-            <div>X</div>
+            <i class="material-icons">&#xE14C;</i>
         </td>
     </tr>
 </table>
