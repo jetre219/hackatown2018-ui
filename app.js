@@ -5,7 +5,8 @@ var app = angular.module("hackatown", [
     "activityGrid",
     "backgroundVideo",
     "couponRedeem",
-    "ui.materialize"
+    "ui.materialize",
+    "facebookButton"
 ]);
 
 app.run(["$rootScope",function($rootScope) {
